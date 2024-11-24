@@ -18,5 +18,5 @@ variable "image" {
 variable "projectId" {
 }
 
-variable "ssh" {
+variable "ssh_user" {
 }

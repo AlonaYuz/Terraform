@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "google" {
-  project = var.projectId
+  project = var.projectId  
   region  = var.region
   zone    = var.zone
 }
@@ -37,7 +37,7 @@ resource "google_compute_instance" "vm_instance" {
 
   # Metadata
   metadata = {
-    ssh-keys = var.ssh
+    ssh-keys = var.ssh_user
   }
 
   tags = ["http-server", "https-server"]
