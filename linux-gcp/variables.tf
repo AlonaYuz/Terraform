@@ -15,8 +15,6 @@ variable "image" {
   default = "ubuntu-2004-focal-v20241016"
 }
 
-variable "projectId" {
-}
-
-variable "ssh_user" {
+variable "vault_address" {
+  default = "http://127.0.0.1:8200"
 }

@@ -7,8 +7,21 @@ terraform {
   }
 }
 
+provider "vault" {
+  address = var.vault_address
+}
+
+data "vault_generic_secret" "gcp" {
+  path = "terraform/data/gcp"
+}
+
+locals {
+  project_id = data.vault_generic_secret.gcp.data["project_id"]
+  ssh_user   = data.vault_generic_secret.gcp.data["ssh_user"]
+}
+
 provider "google" {
-  project = var.projectId  
+  project = local.project_id
   region  = var.region
   zone    = var.zone
 }
@@ -37,7 +50,7 @@ resource "google_compute_instance" "vm_instance" {
 
   # Metadata
   metadata = {
-    ssh-keys = var.ssh_user
+    ssh-keys = data.vault_generic_secret.gcp.data["ssh_user"]
   }
 
   tags = ["http-server", "https-server"]

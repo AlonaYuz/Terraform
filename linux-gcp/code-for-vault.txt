@@ -1,0 +1,5 @@
+vault secrets enable -path=terraform kv
+
+vault kv put terraform/gcp project_id="your-gcp-project-id" ssh_user="your-username"
+
+vault kv get terraform/data/gcp
