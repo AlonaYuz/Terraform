@@ -4,6 +4,11 @@ variable "region" {
   type = string
 }
 
+variable "project_id" {
+  description = "project id in gcp"
+  type = string
+}
+
 variable "zone" {
   description = "vm zone"
   type = string

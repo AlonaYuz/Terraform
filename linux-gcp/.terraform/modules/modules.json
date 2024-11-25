@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"linux_vm_gcp_module","Source":"./modules/linux-vm-gcp","Dir":"modules/linux-vm-gcp"}]}
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"linux_vm_gcp_module","Source":"./modules/linux-vm-gcp","Dir":"modules/linux-vm-gcp"},{"Key":"local_vault_module","Source":"./modules/local-vault","Dir":"modules/local-vault"}]}

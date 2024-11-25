@@ -29,6 +29,12 @@ variable "vault_address" {
   type = string
 }
 
+variable "vault_secret_path" {
+  default = "terraform/data/gcp"
+  description = "path to where secrets are mounted"
+  type = string
+}
+
 variable "network" {
   default = "default"
   description = "external network type"
