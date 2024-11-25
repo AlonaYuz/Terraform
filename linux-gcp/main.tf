@@ -31,10 +31,12 @@ provider "google" {
 }
 
 module "linux_vm_gcp_module" {
-  source         = "./modules/linux-vm-gcp"  # Path to the module directory
+  source         = "./modules/linux-vm-gcp"
   instance_name  = local.instance_name
-  instance_type  = var.machine_type
   zone           = var.zone
   image          = var.image
   network        = var.network
+  region = var.region
+  ssh_user = local.ssh_user
+  machine_type = var.machine_type
 }
