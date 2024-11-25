@@ -1,4 +1,3 @@
-
 variable "region" {
   default = "us-central1"
   description = "vm region"
